@@ -1,0 +1,86 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F1016513-91E3-4BDB-8203-718E1EC60586}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Fluggo</RootNamespace>
+    <AssemblyName>Fluggo</AssemblyName>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;ALLOW_UNSAFE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\Fluggo.XML</DocumentationFile>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AsyncDataReader.cs" />
+    <Compile Include="AsynchronousQueue.cs" />
+    <Compile Include="BaseAsyncResult.cs" />
+    <Compile Include="CacheDictionary.cs" />
+    <Compile Include="ChainedDataReader.cs" />
+    <Compile Include="ChainedEnumerator.cs" />
+    <Compile Include="ChainedServiceProvider.cs" />
+    <Compile Include="InlineConverter.cs" />
+    <Compile Include="FilterEnumerator.cs" />
+    <Compile Include="FixedLengthList of T.cs" />
+    <Compile Include="GenericWeakReference.cs" />
+    <Compile Include="LinkedSortedQueue of T.cs" />
+    <Compile Include="NonNullList.cs" />
+    <Compile Include="OneToOneMap.cs" />
+    <Compile Include="PinnedPointer.cs" />
+    <Compile Include="ProcessingQueue.cs" />
+    <Compile Include="Resources\Resource.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ServiceComponent.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Set.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SortedList of T.cs" />
+    <Compile Include="SortedQueue of T.cs" />
+    <Compile Include="StrideBuffer.cs" />
+    <Compile Include="SynchronizedQueue.cs" />
+    <Compile Include="UnexpectedException.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="COPYING.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

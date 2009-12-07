@@ -1,0 +1,130 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{73F3FF51-E290-4519-84F7-A6A355A3B776}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Fluggo.Communications</RootNamespace>
+    <AssemblyName>Fluggo.Communications</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\Fluggo.Communications.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CompositeStream.cs" />
+    <Compile Include="ECMA-048\C0.cs" />
+    <Compile Include="ECMA-048\ControlFinalCode.cs" />
+    <Compile Include="ECMA-048\ControlSequenceParser.cs" />
+    <Compile Include="ECMA-048\Terminals.cs" />
+    <Compile Include="ECMA-048\C1.cs" />
+    <Compile Include="ECMA-048\ControlExtendedFinalCode.cs" />
+    <Compile Include="ECMA-048\IndependentControlFunction.cs" />
+    <Compile Include="ECMA-048\SetGraphicRenditionParam.cs" />
+    <Compile Include="Messages\IDataMessage.cs" />
+    <Compile Include="Messages\IMessage.cs" />
+    <Compile Include="Messages\MessageBufferWrapper.cs" />
+    <Compile Include="Messages\SCTP\SctpDataMessage.cs" />
+    <Compile Include="Messages\SCTP\SctpMessage.cs" />
+    <Compile Include="Messages\SimpleDataMessage.cs" />
+    <Compile Include="Messages\SCTP\SctpChunkType.cs" />
+    <Compile Include="RpcChannel.cs" />
+    <Compile Include="RPC\IRequestTarget.cs" />
+    <Compile Include="RPC\RequestChannel.cs" />
+    <Compile Include="RPC\IStreamRequest.cs" />
+    <Compile Include="RPC\RpcResourceProvider.cs" />
+    <Compile Include="Serialization\SerializationAttribute.cs" />
+    <Compile Include="Serialization\BitSerializerFactoryResolver.cs" />
+    <Compile Include="Serialization\BitSerializerParamInfo.cs" />
+    <Compile Include="Serialization\OneWayAttribute.cs" />
+    <Compile Include="Streams\Channel.cs" />
+    <Compile Include="Serialization\DerivedTypeCodeAttribute.cs" />
+    <Compile Include="Serialization\IgnoreAttribute.cs" />
+    <Compile Include="Serialization\MaxLengthAttribute.cs" />
+    <Compile Include="Serialization\RangeAttribute.cs" />
+    <Compile Include="Serialization\BitReader.cs" />
+    <Compile Include="Serialization\BitSerializer.cs" />
+    <Compile Include="Serialization\BitSerializerOptions.cs" />
+    <Compile Include="Serialization\BitWriter.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Serialization\RequiredAttribute.cs" />
+    <Compile Include="Serialization\StoreTypeCodeAttribute.cs" />
+    <Compile Include="Streams\Pipe.cs" />
+    <Compile Include="Messages\IMessageBuffer.cs" />
+    <Compile Include="Streams\Stream%28T%29.cs" />
+    <Compile Include="Streams\StreamOverChannel.cs" />
+    <Compile Include="Streams\ChannelMultiplexer.cs" />
+    <Compile Include="Streams\MessageChannelOverStream.cs" />
+    <Compile Include="Messages\DeliveryOptions.cs" />
+    <Compile Include="Streams\NetworkBitConverter.cs" />
+    <Compile Include="Streams\QueueList.cs" />
+    <Compile Include="Streams\StreamPool.cs" />
+    <Compile Include="Streams\Tap.cs" />
+    <Compile Include="XML\XmlAsyncWriter.cs" />
+    <Compile Include="Xmpp\Client.cs" />
+    <Compile Include="Xmpp\Strings.cs" />
+    <Compile Include="XML\Parser\AttributeParser.cs" />
+    <Compile Include="XML\Parser\CommentParser.cs" />
+    <Compile Include="XML\Parser\DocTypeParser.cs" />
+    <Compile Include="XML\Parser\ElementContentParser.cs" />
+    <Compile Include="XML\Parser\ElementParser.cs" />
+    <Compile Include="XML\Parser\NameParser.cs" />
+    <Compile Include="XML\Parser\Parser.cs" />
+    <Compile Include="XML\Parser\ProcessingInstructionParser.cs" />
+    <Compile Include="XML\Parser\PrologParser.cs" />
+    <Compile Include="XML\Parser\ReferenceParser.cs" />
+    <Compile Include="XML\Parser\XmlDeclarationParser.cs" />
+    <Compile Include="XML\XmlAsyncPushTextReader.cs" />
+    <Compile Include="XML\XmlAsyncReader.cs" />
+    <Compile Include="XML\XmlAsyncTextReader.cs" />
+    <Compile Include="Xmpp\Server.cs" />
+    <Compile Include="Xmpp\StreamExceptions.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Fluggo.CodeGeneration\Fluggo.CodeGeneration.csproj">
+      <Project>{32B17D2C-31A2-465E-B646-BBC71B62AE81}</Project>
+      <Name>Fluggo.CodeGeneration</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Fluggo\Fluggo.csproj">
+      <Project>{F1016513-91E3-4BDB-8203-718E1EC60586}</Project>
+      <Name>Fluggo</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="COPYING.txt" />
+    <Content Include="Streams\Common.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="SQL\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,116 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{32B17D2C-31A2-465E-B646-BBC71B62AE81}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Fluggo.CodeGeneration</RootNamespace>
+    <AssemblyName>Fluggo.CodeGeneration</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\Fluggo.CodeGeneration.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="IL\Contexts.cs" />
+    <Compile Include="IL\Contexts\CodeMemberGeneratorContext.cs" />
+    <Compile Include="IL\Contexts\ConstructorGeneratorContext.cs" />
+    <Compile Include="IL\Contexts\ILGeneratorContext.cs" />
+    <Compile Include="IL\Contexts\MethodGeneratorContext.cs" />
+    <Compile Include="IL\Contexts\TypeGeneratorContext.cs" />
+    <Compile Include="IL\Expressions\ArrayElement.cs" />
+    <Compile Include="IL\Expressions\Boolean\BooleanConstantExpression.cs" />
+    <Compile Include="IL\Expressions\Boolean\BooleanExpression.cs" />
+    <Compile Include="IL\Expressions\Boolean\CompareExpression.cs" />
+    <Compile Include="IL\Expressions\Constant\ByteConstantExpression.cs" />
+    <Compile Include="IL\Expressions\Constant\Int64ConstantExpression.cs" />
+    <Compile Include="IL\Expressions\Constant\UInt64ConstantExpression.cs" />
+    <Compile Include="IL\Expressions\Constant\UInt32ConstantExpression.cs" />
+    <Compile Include="IL\Expressions\Constant\UInt16ConstantExpression.cs" />
+    <Compile Include="IL\Expressions\Constant\SByteConstantExpression.cs" />
+    <Compile Include="IL\Expressions\Constant\Int16ConstantExpression.cs" />
+    <Compile Include="IL\Expressions\Constant\Int32ConstantExpression.cs" />
+    <Compile Include="IL\Expressions\Constant\NullExpression.cs" />
+    <Compile Include="IL\Expressions\Constant\StringConstantExpression.cs" />
+    <Compile Include="IL\Expressions\Expression.cs" />
+    <Compile Include="IL\Expressions\Expressions.cs" />
+    <Compile Include="IL\Expressions\Field.cs" />
+    <Compile Include="IL\Expressions\Flow-Control\ConditionalExpression.cs" />
+    <Compile Include="IL\Expressions\Flow-Control\FixedExpression.cs" />
+    <Compile Include="IL\Expressions\Flow-Control\ForLoopExpression.cs" />
+    <Compile Include="IL\Expressions\Flow-Control\ListExpression.cs" />
+    <Compile Include="IL\Expressions\Flow-Control\LockExpression.cs" />
+    <Compile Include="IL\Expressions\Flow-Control\SwitchExpression.cs" />
+    <Compile Include="IL\Expressions\Flow-Control\TryBlockExpression.cs" />
+    <Compile Include="IL\Expressions\Flow-Control\WhileExpression.cs" />
+    <Compile Include="IL\Expressions\Local.cs" />
+    <Compile Include="IL\Expressions\Param.cs" />
+    <Compile Include="IL\Expressions\Property.cs" />
+    <Compile Include="IL\Expressions\Simple\ArgumentExpression.cs" />
+    <Compile Include="IL\Expressions\Simple\ArithmeticAssignmentExpression.cs" />
+    <Compile Include="IL\Expressions\Simple\ArithmeticExpression.cs" />
+    <Compile Include="IL\Expressions\Simple\ArrayElementExpression.cs" />
+    <Compile Include="IL\Expressions\Simple\CallExpression.cs" />
+    <Compile Include="IL\Expressions\Simple\CastExpression.cs" />
+    <Compile Include="IL\Expressions\Simple\CommentExpression.cs" />
+    <Compile Include="IL\Expressions\Simple\AddressOfExpression.cs" />
+    <Compile Include="IL\Expressions\Simple\DeclareLocalExpression.cs" />
+    <Compile Include="IL\Expressions\Simple\EmptyExpression.cs" />
+    <Compile Include="IL\Expressions\Simple\FieldExpression.cs" />
+    <Compile Include="IL\Expressions\Boolean\IsInstanceExpression.cs" />
+    <Compile Include="IL\Expressions\Simple\LocalExpression.cs" />
+    <Compile Include="IL\Expressions\Simple\NewArrayExpression.cs" />
+    <Compile Include="IL\Expressions\Simple\NewObjectExpression.cs" />
+    <Compile Include="IL\Expressions\Simple\ReturnExpression.cs" />
+    <Compile Include="IL\Expressions\Simple\SetArrayElementExpression.cs" />
+    <Compile Include="IL\Expressions\Simple\StoreFieldExpression.cs" />
+    <Compile Include="IL\Expressions\Simple\StoreLocalExpression.cs" />
+    <Compile Include="IL\Expressions\Simple\ThisExpression.cs" />
+    <Compile Include="IL\Expressions\Simple\ThrowExpression.cs" />
+    <Compile Include="IL\ILCodeBuilder.cs" />
+    <Compile Include="IL\ModuleGeneratorContext.cs" />
+    <Compile Include="IL\ObjectProxy.cs" />
+    <Compile Include="IL\TypeProxy.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="COPYING.txt" />
+    <Content Include="IL\Expressions\Common.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Fluggo\Fluggo.csproj">
+      <Project>{F1016513-91E3-4BDB-8203-718E1EC60586}</Project>
+      <Name>Fluggo</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

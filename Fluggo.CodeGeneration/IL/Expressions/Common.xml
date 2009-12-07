@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+  <Expression>
+    <method name="Emit">
+      <summary>Evaluates the expression and stores the resulting IL in the given context.</summary>
+      <param name="cxt">
+        <see cref="ILGeneratorContext"/> to which the IL should be written.
+      </param>
+      <exception cref="ArgumentNullException">
+        <paramref name='cxt'/> is <see langword='null'/>.
+      </exception>
+    </method>
+
+    <method name='ToString'>
+      <summary>Overrides the <see cref='Object.ToString()'/> method.</summary>
+      <returns>The expression as a pseudo-C# string.</returns>
+      <remarks>This method is used to emit code text when the expression does not support marking
+        its own sequence points (<see cref='Expression.MarksOwnSequence'/> returns false).</remarks>
+    </method>
+
+    <property name='MarksOwnSequence'>
+      <summary>
+        Overrides <see cref='Expression.MarksOwnSequence'/>.
+      </summary>
+      <value>True if the expression marks its own sequence points in the IL stream, false otherwise.</value>
+    </property>
+  </Expression>
+</root>
